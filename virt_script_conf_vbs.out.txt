@@ -1,0 +1,99 @@
+Microsoft (R) Windows Script Host Version 5.812
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+[6/25/2024 11:28:33 AM] Configuring static IPv4 IPs
+[6/25/2024 11:28:33 AM] netsh interface ipv4 show ipaddress "Ethernet" level=normal
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] 
+Interface 9: Ethernet
+Addr Type  DAD State   Valid Life Pref. Life Address
+---------  ----------- ---------- ---------- ------------------------
+Dhcp       Preferred  249d23h59m55s 249d23h59m55s 166.88.141.15
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv4 delete address "Ethernet" addr="166.88.141.15" gateway=all
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv4 delete dnsservers "Ethernet" all
+[6/25/2024 11:28:33 AM] 
+There are no Domain Name Servers (DNS) configured on this computer.
+[6/25/2024 11:28:33 AM] 	00-16-3E-97-4D-47
+[6/25/2024 11:28:33 AM] 	166.88.141.1
+[6/25/2024 11:28:33 AM] 	Ethernet
+[6/25/2024 11:28:33 AM] 	8.8.8.8,8.8.4.4
+[6/25/2024 11:28:33 AM] 	IP: 166.88.141.15 Netmask: 255.255.255.0 Gateway: 166.88.141.1 Routed: 0
+[6/25/2024 11:28:33 AM] netsh interface ipv4 set address "Ethernet" static 166.88.141.15 mask="255.255.255.0" 166.88.141.1
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv4 add route ::/0 "Ethernet" 166.88.141.1
+[6/25/2024 11:28:33 AM] 
+Invalid prefix parameter (::/0). Prefix should be of the form <IPv4 address>/[0-32].
+[6/25/2024 11:28:33 AM] netsh interface ipv4 set interface mtu="0
+[6/25/2024 11:28:33 AM] netsh interface ipv4 add dnsservers "Ethernet" 8.8.8.8 index=0
+[6/25/2024 11:28:33 AM] 
+The configured DNS server is incorrect or does not exist.
+[6/25/2024 11:28:33 AM] netsh interface ipv4 add dnsservers "Ethernet" 8.8.4.4 index=1
+[6/25/2024 11:28:33 AM] 
+The configured DNS server is incorrect or does not exist.
+[6/25/2024 11:28:33 AM] Configuring static IPv6 IPs
+[6/25/2024 11:28:33 AM] netsh interface ipv6 show addresses "Ethernet" level=normal
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] 
+Interface 9: Ethernet
+Addr Type  DAD State   Valid Life Pref. Life Address
+---------  ----------- ---------- ---------- ------------------------
+Manual     Preferred     infinite   infinite 2400:8d60:6::3fa1:74d5
+Other      Preferred     infinite   infinite fe80::1851:d421:46ae:c0dd%9
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv6 delete address "Ethernet" addr="2400:8d60:6::3fa1:74d5"
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv6 delete address "Ethernet" addr="fe80::1851:d421:46ae:c0dd"
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv6 delete dnsservers "Ethernet" all
+[6/25/2024 11:28:33 AM] 
+There are no Domain Name Servers (DNS) configured on this computer.
+[6/25/2024 11:28:33 AM] 	00-16-3E-97-4D-47
+[6/25/2024 11:28:33 AM] 	2400:8d60:6::1
+[6/25/2024 11:28:33 AM] 	Ethernet
+[6/25/2024 11:28:33 AM] 	2001:4860:4860::8888,2001:4860:4860::8844
+[6/25/2024 11:28:33 AM] 	IP: 2400:8d60:0006:0000:0000:0000:3fa1:74d5 Netmask: 48 Gateway: 2400:8d60:6::1 Routed: 0
+[6/25/2024 11:28:33 AM] netsh interface ipv6 set address "Ethernet" 2400:8d60:0006:0000:0000:0000:3fa1:74d5/48
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv6 add route ::/0 "Ethernet" nexthop=2400:8d60:6::1
+[6/25/2024 11:28:33 AM] 
+The object already exists.
+[6/25/2024 11:28:33 AM] netsh interface ipv6 set interface mtu="0
+[6/25/2024 11:28:33 AM] netsh interface ipv6 add dnsservers "Ethernet" 2001:4860:4860::8888 index=0
+[6/25/2024 11:28:33 AM] 
+The configured DNS server is incorrect or does not exist.
+[6/25/2024 11:28:33 AM] netsh interface ipv6 add dnsservers "Ethernet" 2001:4860:4860::8844 index=1
+[6/25/2024 11:28:33 AM] 
+The configured DNS server is incorrect or does not exist.
+[6/25/2024 11:28:33 AM] Configuring static IPv4 IPs
+[6/25/2024 11:28:33 AM] netsh interface ipv4 show ipaddress "Ethernet 3" level=normal
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] 
+Interface 8: Ethernet 3
+Addr Type  DAD State   Valid Life Pref. Life Address
+---------  ----------- ---------- ---------- ------------------------
+Manual     Preferred     infinite   infinite 10.5.0.222
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv4 delete address "Ethernet 3" addr="10.5.0.222" gateway=all
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv4 delete dnsservers "Ethernet 3" all
+[6/25/2024 11:28:33 AM] 
+There are no Domain Name Servers (DNS) configured on this computer.
+[6/25/2024 11:28:33 AM] 	00-16-3E-15-3F-1C
+[6/25/2024 11:28:33 AM] 	0.0.0.0
+[6/25/2024 11:28:33 AM] 	Ethernet 3
+[6/25/2024 11:28:33 AM] 	8.8.8.8,8.8.4.4
+[6/25/2024 11:28:33 AM] 	IP: 10.5.0.222 Netmask: 255.0.0.0 Gateway: 0.0.0.0 Routed: 0
+[6/25/2024 11:28:33 AM] netsh interface ipv4 set address "Ethernet 3" static 10.5.0.222 mask="255.0.0.0" 0.0.0.0
+[6/25/2024 11:28:33 AM] 
+[6/25/2024 11:28:33 AM] netsh interface ipv4 add route ::/0 "Ethernet 3" 0.0.0.0
+[6/25/2024 11:28:33 AM] 
+Invalid prefix parameter (::/0). Prefix should be of the form <IPv4 address>/[0-32].
+[6/25/2024 11:28:33 AM] netsh interface ipv4 set interface mtu="0
+[6/25/2024 11:28:33 AM] netsh interface ipv4 add dnsservers "Ethernet 3" 8.8.8.8 index=0
+[6/25/2024 11:28:34 AM] 
+The configured DNS server is incorrect or does not exist.
+[6/25/2024 11:28:34 AM] netsh interface ipv4 add dnsservers "Ethernet 3" 8.8.4.4 index=1
+[6/25/2024 11:28:34 AM] 
+The configured DNS server is incorrect or does not exist.
